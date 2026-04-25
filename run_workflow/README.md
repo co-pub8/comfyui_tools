@@ -44,8 +44,16 @@ pip install -r requirements.txt
 ### CLI
 
 ```bash
-python run_workflow.py --input input.json --output result.json
+python run_workflow.py -i input.json -o result.json
 ```
+
+**引数一覧:**
+
+| 引数 | 省略形 | 必須 | デフォルト | 説明 |
+|---|---|---|---|---|
+| `--input` | `-i` | ○ | — | 入力 JSON ファイルのパス |
+| `--output` | `-o` | — | `result_<timestamp>.json` | 結果 JSON の出力先 |
+| `--config` | `-c` | — | `config.json` | 設定ファイルのパス |
 
 **`input.json` フォーマット:**
 

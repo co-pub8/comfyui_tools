@@ -379,15 +379,15 @@ class WorkflowRunner:
 
 def main():
     parser = argparse.ArgumentParser(description="ComfyUI ワークフロー自動実行")
-    parser.add_argument("--input", required=True, help="入力 JSON ファイルのパス")
+    parser.add_argument("-i", "--input", required=True, help="入力 JSON ファイルのパス")
     default_output = f"result_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}.json"
     parser.add_argument(
-        "--output",
+        "-o", "--output",
         default=default_output,
         help="結果 JSON の出力先（省略時: タイムスタンプ付きファイル名）",
     )
     parser.add_argument(
-        "--config",
+        "-c", "--config",
         default="config.json",
         help="設定ファイルのパス（省略時: config.json）",
     )
