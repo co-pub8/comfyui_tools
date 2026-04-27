@@ -7,6 +7,7 @@ ComfyUI 関連の Python ユーティリティ集。各ツールはサブディ�
 | ツール | 説明 |
 |---|---|
 | [`run_workflow/`](run_workflow/README.md) | ComfyUI のワークフローを Python から自動実行するツール |
+| [`generate_image_bot/`](generate_image_bot/README.md) | Discord のメンションで ComfyUI に画像生成を指示し、生成された画像を返送する Discord ボット |
 
 ## ライセンス
 

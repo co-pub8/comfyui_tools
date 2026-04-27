@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python -m pytest test/ -v)",
-      "Bash(python -m pytest test/ -q)"
+      "Bash(python -m pytest test/ -q)",
+      "Bash(python -m pytest test/test_generate_image_bot.py -v)",
+      "Bash(black generate_image_bot.py test/test_generate_image_bot.py)"
     ]
   }
 }

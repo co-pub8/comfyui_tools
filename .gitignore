@@ -217,6 +217,11 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# generate_image_bot
+generate_image_bot/config.json
+
 # other files
 _*.json
+_*.txt
 result_*.json
+log/
