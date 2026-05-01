@@ -59,17 +59,17 @@ python generate_image_bot.py --config /path/to/config.json
 ユーザー: /gen_image
           → GenImageModal が表示される
 
-          [LoRAs]              my_lora, another_lora
-          [Positive]           masterpiece, best quality, 1girl
-          [Negative]           worst quality, bad quality
-          [Image Orientation]  vertical
+          [LoRAs]                        my_lora, another_lora
+          [Positive]                     masterpiece, best quality, 1girl
+          [Negative]                     worst quality, bad quality
+          [画像の向き (vertical / horizontal)]  vertical
 
           → 送信ボタンを押す
 
-ボット:   loras: my_lora, another_lora
-          positive: masterpiece, best quality, 1girl
-          negative: worst quality, bad quality
-          image_orientation: vertical
+ボット:   **loras**: my_lora, another_lora
+          **positive**: masterpiece, best quality, 1girl
+          **negative**: worst quality, bad quality
+          **image_orientation**: vertical
           [⏳ リアクション付与]
           ...（生成中）...
           [画像ファイルを添付して返信]

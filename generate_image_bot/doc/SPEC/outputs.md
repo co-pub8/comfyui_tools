@@ -31,7 +31,7 @@ generate_image_bot/log/result_YYYYMMDD_hhmmss.json
 | 生成成功 | あり（status: success） |
 | `WorkflowRunner.execute()` が ValueError | あり（status: error） |
 | 予期しない例外 | あり（status: error） |
-| `_resolve_files()` で ValueError | あり（status: error） |
+| `_resolve_output_paths()` で ValueError | あり（status: error） |
 | パースエラー | なし（生成を開始していないため） |
 | レート制限 | なし（生成を開始していないため） |
 | グローバルロック中 | なし（生成を開始していないため） |

@@ -9,7 +9,8 @@
 | シャットダウン要求中のメンションメッセージ | 無視する（リアクション・返信なし） |
 | シャットダウン要求中のスラッシュコマンド | ephemeral でシャットダウン中を通知する |
 | フォーマット不正（必須キー欠落 等） | `❌` + エラー内容を返信 |
-| `image_orientation` の値が `vertical` / `horizontal` 以外 | `❌` + エラー内容を返信 |
+| `image_orientation` の値が `vertical` / `horizontal` 以外（メンション経由） | `❌` + エラー内容を返信 |
+| `image_orientation` の値が `vertical` / `horizontal` 以外（モーダル経由） | ephemeral エラーメッセージを返信（`❌` リアクションは付与しない） |
 | レート制限（30秒以内の再リクエスト） | `❌` + 残り待機秒数を返信 |
 | グローバルロック中（生成中） | `❌` + 生成中メッセージを返信 |
 | `WorkflowRunner.execute()` が ValueError | `❌` + エラー内容を返信 |

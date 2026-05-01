@@ -77,27 +77,28 @@ DM からのコマンドは無視する（リアクション・返信なし）�
 | `loras` | LoRAs | 1行テキスト | 省略可 |
 | `positive` | Positive | 複数行テキスト | 必須 |
 | `negative` | Negative | 複数行テキスト | 必須 |
-| `image_orientation` | Image Orientation (vertical / horizontal) | 1行テキスト | 省略可 |
+| `image_orientation` | 画像の向き (vertical / horizontal) | 1行テキスト | 省略可 |
 
 #### モーダル送信後の動作
 
-1. 入力値からキーワード形式のメッセージを生成してチャンネルに送信する（`loras` が空の場合は `loras:` 行を省略、`image_orientation` が空の場合は `image_orientation:` 行を省略）
-2. 送信されたメッセージを起点として、メンションメッセージと同じ生成フローを実行する
+1. `image_orientation` の値が `vertical` / `horizontal` 以外の場合は ephemeral エラーメッセージを返信し、処理を中断する（❌ リアクションは付与しない）
+2. 入力値から太字形式のメッセージを生成してチャンネルに送信する（`loras` が空の場合は `**loras**:` 行を省略、`image_orientation` が空の場合は `**image_orientation**:` 行を省略）
+3. 送信されたメッセージを起点として、レート制限チェック以降の生成フローを実行する
 
-**返信メッセージの例（loras あり、image_orientation あり）**
-
-```
-loras: my_lora, another_lora
-positive: masterpiece, best quality, 1girl
-negative: worst quality, bad quality
-image_orientation: vertical
-```
-
-**返信メッセージの例（loras なし、image_orientation なし）**
+**送信メッセージの例（loras あり、image_orientation あり）**
 
 ```
-positive: masterpiece, best quality, 1girl
-negative: worst quality, bad quality
+**loras**: my_lora, another_lora
+**positive**: masterpiece, best quality, 1girl
+**negative**: worst quality, bad quality
+**image_orientation**: vertical
+```
+
+**送信メッセージの例（loras なし、image_orientation なし）**
+
+```
+**positive**: masterpiece, best quality, 1girl
+**negative**: worst quality, bad quality
 ```
 
 #### 入力バリデーション

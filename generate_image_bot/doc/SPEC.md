@@ -19,14 +19,32 @@ comfyui_tools/
     config.json            # ComfyUI 接続設定・LoRAマッピング
     templates/             # ワークフローテンプレート
   generate_image_bot/
-    generate_image_bot.py  # メインボットスクリプト
+    generate_image_bot.py  # エントリポイント（起動・再接続ループ）
     config.json            # ボット設定（トークン・パス等）
-    SPEC.md                # 本ファイル
     requirements.txt       # 依存ライブラリ
+    doc/
+      SPEC.md              # 本ファイル
+      SPEC/                # セクション別仕様書
+      USERS_MANUAL.md
+    modules/
+      image_bot.py         # ImageBot クラス
+      gen_image_modal.py   # GenImageModal クラス
+      message_parser.py    # MessageParser クラス
+      rate_limiter.py      # RateLimiter クラス
+      load_config.py       # 設定ファイルの読み込み・バリデーション
+      common_lib.py        # ログ書き込み等の共通処理
+      const.py             # 定数定義
     log/                   # ログ出力ディレクトリ（自動生成）
       result_YYYYMMDD_hhmmss.json
     test/
-      test_generate_image_bot.py
+      conftest.py
+      test_image_bot.py
+      test_gen_image_modal.py
+      test_message_parser.py
+      test_rate_limiter.py
+      test_load_config.py
+      test_common_lib.py
+      test_helper.py
 ```
 
 ## 設定ファイル

@@ -153,7 +153,7 @@ image_orientation: vertical
 
 **スラッシュコマンド**
 
-テキストチャンネルで `/gen_image` を入力するとモーダルが表示されます。各フィールドに入力して送信すると、キーワード形式のメッセージがチャンネルに投稿されて画像生成が始まります。
+テキストチャンネルで `/gen_image` を入力するとモーダルが表示されます。各フィールドに入力して送信すると、太字形式のメッセージがチャンネルに投稿されて画像生成が始まります。
 
 詳細な使用方法については[USERS_MANUAL](./doc/USERS_MANUAL.md)を参照してください。
 
@@ -194,18 +194,37 @@ image_orientation: vertical
 ## テスト
 
 ```bash
-python -m pytest test/ -v
+python -m pytest test/
 ```
 
 ## ファイル構成
 
 ```
 generate_image_bot/
-  generate_image_bot.py  # メインボットスクリプト
+  generate_image_bot.py  # エントリポイント（起動・再接続ループ）
   config.json            # ボット設定（トークン・パス等）
   requirements.txt
+  doc/
+    SPEC.md              # 仕様書（概要・ファイル構成）
+    SPEC/                # セクション別仕様書
+    USERS_MANUAL.md
+  modules/
+    image_bot.py         # ImageBot クラス
+    gen_image_modal.py   # GenImageModal クラス（スラッシュコマンド用モーダル）
+    message_parser.py    # MessageParser クラス
+    rate_limiter.py      # RateLimiter クラス
+    load_config.py       # 設定ファイルの読み込み・バリデーション
+    common_lib.py        # ログ書き込み等の共通処理
+    const.py             # 定数定義
   log/                   # ログ出力ディレクトリ（自動生成）
     result_YYYYMMDD_hhmmss.json
   test/
-    test_generate_image_bot.py
+    conftest.py
+    test_image_bot.py
+    test_gen_image_modal.py
+    test_message_parser.py
+    test_rate_limiter.py
+    test_load_config.py
+    test_common_lib.py
+    test_helper.py
 ```
